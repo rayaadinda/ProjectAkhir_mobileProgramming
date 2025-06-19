@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
+import com.google.android.material.card.MaterialCardView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -19,7 +20,7 @@ public class Dashboard extends AppCompatActivity {
     private ListView navList;
     private ImageView menuButton;
 
-    ImageView sensor, map;
+    MaterialCardView sensor, map;
 
     private String[] drawerItems = { "Dashboard", "Tambah Data", "Lihat Data", "Keluar" };
 
@@ -30,7 +31,6 @@ public class Dashboard extends AppCompatActivity {
 
         drawerLayout = findViewById(R.id.drawer_layout);
         navList = findViewById(R.id.nav_list);
-        menuButton = findViewById(R.id.menu_button);
 
         sensor = findViewById(R.id.card_sensor);
         map = findViewById(R.id.card_maps);
@@ -60,30 +60,14 @@ public class Dashboard extends AppCompatActivity {
             drawerLayout.closeDrawer(navList); // Tutup drawer setelah memilih item
         });
 
-        menuButton.setOnClickListener(v -> drawerLayout.openDrawer(navList));
-        onFeature1Click(sensor);
 
-    }
-
-    public void onFeature1Click(View view) {
-        Toast.makeText(this, "Fitur Info diklik", Toast.LENGTH_SHORT).show();
-
-        // pindah ke activit sensor
-        sensor.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Dashboard.this,
-                        SensorActivity.class));
-            }
+        // Set click listeners for cards
+        sensor.setOnClickListener(v -> {
+            startActivity(new Intent(Dashboard.this, SensorActivity.class));
         });
 
-        // pindah ke activity maps
-        map.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Dashboard.this,
-                        MapActivity.class));
-            }
+        map.setOnClickListener(v -> {
+            startActivity(new Intent(Dashboard.this, MapActivity.class));
         });
     }
 }
