@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#181820"
+    android:background="@color/background"
     android:gravity="center"
     tools:context=".MainActivity">
 
@@ -14,80 +14,96 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="#181820"
-        android:elevation="4dp"
-        android:padding="16dp"
-        android:layout_margin="8dp"
-        android:clipToOutline="true"
-        android:outlineProvider="background"
-        android:backgroundTint="#181820"
-        android:backgroundTintMode="src_in">
+        android:background="@color/background"
+        android:elevation="0dp"
+        android:padding="24dp"
+        android:layout_margin="0dp">
 
         <TextView
             android:id="@+id/login_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/inter_medium"
-            android:text="Hey,\nWelcome \nBack"
-            android:textSize="48sp"
-            android:textColor="#FFFFFF"
-            android:textStyle="bold"
+            android:fontFamily="@font/inter_extrabold"
+            android:text="Welcome back"
+            android:textSize="24sp"
+            android:textColor="@color/primary_text"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/login_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_regular"
+            android:text="Enter your credentials to continue"
+            android:textSize="14sp"
+            android:textColor="@color/muted_text"
             android:layout_marginBottom="32dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:textColor="@color/primary_text"
+            android:textSize="14sp"
+            android:fontFamily="@font/inter_medium"
+            android:layout_marginBottom="8dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="#23232A"
-            android:padding="4dp"
-            android:layout_marginBottom="16dp"
+            android:background="@color/input_bg"
+            android:layout_marginBottom="20dp"
             android:clipToOutline="true"
-            android:outlineProvider="background"
-            android:backgroundTint="#23232A"
-            android:backgroundTintMode="src_in"
-            android:radius="6dp">
+            app:cornerRadius="8dp">
 
             <EditText
                 android:id="@+id/username"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:textSize="16sp"
-                android:hint="email@example.com"
-                android:padding="12dp"
+                android:textSize="14sp"
+                android:hint="Email address"
+                android:padding="16dp"
                 android:background="@android:color/transparent"
-                android:drawableLeft="@drawable/ic_email"
-                android:drawablePadding="10dp"
-                android:textColor="#FFFFFF"
-                android:textColorHint="#888888"
+                android:drawableStart="@drawable/ic_email"
+                android:drawablePadding="12dp"
+                android:textColor="@color/primary_text"
+                android:inputType="textEmailAddress"
+                android:textColorHint="@color/muted_text"
                 android:fontFamily="@font/inter_regular"/>
         </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Password"
+            android:textColor="@color/primary_text"
+            android:textSize="14sp"
+            android:fontFamily="@font/inter_medium"
+            android:layout_marginBottom="8dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="#23232A"
-            android:padding="4dp"
+            android:background="@color/input_bg"
             android:layout_marginBottom="8dp"
             android:clipToOutline="true"
-            android:outlineProvider="background"
-            android:backgroundTint="#23232A"
-            android:backgroundTintMode="src_in"
-            android:radius="6dp">
+            app:cornerRadius="8dp">
 
             <EditText
                 android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:hint="Password"
+                android:hint="Enter password"
                 android:inputType="textPassword"
-                android:padding="12dp"
+                android:padding="16dp"
                 android:background="@android:color/transparent"
-                android:drawableLeft="@drawable/ic_lock"
-                android:drawablePadding="10dp"
-                android:textColor="#FFFFFF"
-                android:textSize="16sp"
-                android:textColorHint="#888888"
+                android:drawableStart="@drawable/ic_lock"
+                android:drawablePadding="12dp"
+                android:textColor="@color/primary_text"
+                android:textSize="14sp"
+                android:textColorHint="@color/muted_text"
                 android:fontFamily="@font/inter_regular"/>
         </LinearLayout>
 
@@ -96,48 +112,36 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Forgot password?"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/secondary_text"
             android:textSize="14sp"
-            android:fontFamily="@font/inter_regular"
+            android:fontFamily="@font/inter_medium"
             android:layout_gravity="end"
-            android:layout_marginBottom="24dp"/>
+            android:layout_marginBottom="32dp"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/login"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:text="Login"
+            android:layout_height="48dp"
+            android:text="Sign in"
             android:textAllCaps="false"
-            android:backgroundTint="#FFFFFF"
-            android:textColor="#181820"
-            app:cornerRadius="6dp"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/inter_medium"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="or continue with"
-            android:textColor="#888888"
-            android:textSize="14sp"
-            android:gravity="center"
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="16dp"
-            android:fontFamily="@font/inter_regular"
-            android:visibility="gone"/>
+            android:backgroundTint="@color/accent"
+            android:textColor="@color/button_text"
+            app:cornerRadius="4dp"
+            android:fontFamily="@font/inter_medium"
+            android:textSize="14sp"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_gravity="center"
-            android:layout_marginTop="24dp">
+            android:layout_marginTop="32dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Don't have an account? "
-                android:textColor="#888888"
+                android:textColor="@color/muted_text"
                 android:textSize="14sp"
                 android:fontFamily="@font/inter_regular"/>
 
@@ -145,10 +149,9 @@
                 android:id="@+id/register"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sign up"
-                android:textColor="#FFFFFF"
+                android:text="Create account"
+                android:textColor="@color/primary_text"
                 android:textSize="14sp"
-                android:textStyle="bold"
                 android:fontFamily="@font/inter_medium"/>
         </LinearLayout>
     </LinearLayout>

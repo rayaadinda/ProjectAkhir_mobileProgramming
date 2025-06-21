@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    android:padding="24dp"
+    tools:context=".SpeechRecognizer">
+
+    <!-- Top Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="24dp">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_left"
+            android:contentDescription="Back"
+            android:padding="8dp"
+            android:tint="@color/primary_text"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Voice Recognition"
+            android:textSize="18sp"
+            android:textColor="@color/primary_text"
+            android:fontFamily="@font/inter_extrabold"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+    
+    <!-- Title and Description -->
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Speech to Text"
+        android:textSize="24sp"
+        android:textColor="@color/primary_text"
+        android:fontFamily="@font/inter_extrabold"
+        android:layout_marginBottom="8dp" />
+        
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Speak clearly and your words will appear below"
+        android:textSize="14sp"
+        android:textColor="@color/muted_text"
+        android:fontFamily="@font/inter_regular"
+        android:layout_marginBottom="32dp" />
+    
+    <!-- Status Indicator -->
+    <TextView
+        android:id="@+id/statusText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ready to listen"
+        android:textSize="14sp"
+        android:textColor="@color/secondary_text"
+        android:fontFamily="@font/inter_medium"
+        android:layout_marginBottom="8dp" />
+    
+    <!-- Output Box -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="@color/input_bg"
+        android:padding="16dp"
+        android:layout_marginBottom="24dp"
+        app:cornerRadius="4dp">
+        
+        <TextView
+            android:id="@+id/textSpeech"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Your speech will appear here..."
+            android:textColor="@color/secondary_text"
+            android:textSize="14sp"
+            android:fontFamily="@font/inter_regular"
+            android:gravity="top|start" />
+    </LinearLayout>
+    
+    <!-- Controls -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnClear"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="Clear"
+            android:textAllCaps="false"
+            android:backgroundTint="@color/input_bg"
+            android:textColor="@color/primary_text"
+            app:strokeColor="@color/border"
+            app:strokeWidth="1dp"
+            app:cornerRadius="4dp"
+            android:fontFamily="@font/inter_medium"
+            android:textSize="14sp"
+            android:layout_marginEnd="8dp"/>
+        
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSpeak"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="🎤 Record"
+            android:textAllCaps="false"
+            android:backgroundTint="@color/accent"
+            android:textColor="@color/button_text"
+            app:cornerRadius="4dp"
+            android:fontFamily="@font/inter_medium"
+            android:textSize="14sp"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+
+</LinearLayout>
