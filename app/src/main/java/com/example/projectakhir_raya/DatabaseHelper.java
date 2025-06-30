@@ -11,7 +11,7 @@ import android.content.ContentValues;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "pakaian.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
     private static final String TABLE_NAME = "pakaian";
     private static final String COLUMN_ID = "id";
     private static final String COLUMN_NAMA = "nama";
