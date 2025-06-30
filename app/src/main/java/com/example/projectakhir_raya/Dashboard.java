@@ -96,7 +96,7 @@ public class Dashboard extends AppCompatActivity {
         super.onResume();
         loadDashboardData();
     }
-    
+
     private void loadDashboardData() {
         int productCount = 0;
         long totalValue = 0;
@@ -132,7 +132,7 @@ public class Dashboard extends AppCompatActivity {
             cursor.close();
         }
     }
-    
+
     private void displayRecentProducts(Cursor cursor) {
         if (product1Name == null || product2Name == null) {
             return;
@@ -178,13 +178,13 @@ public class Dashboard extends AppCompatActivity {
             }
         }
     }
-    
+
     private void setProductImage(ImageView imageView, String fotoPath) {
         if (fotoPath == null || fotoPath.isEmpty()) {
             return;
         }
         int resourceId = getResources().getIdentifier(
-            fotoPath, "drawable", getPackageName());
+                fotoPath, "drawable", getPackageName());
         if (resourceId != 0) {
             imageView.setImageResource(resourceId);
         } else {
@@ -214,6 +214,10 @@ public class Dashboard extends AppCompatActivity {
                     startActivity(new Intent(Dashboard.this, LihatDataActivity.class));
                     break;
                 case 3:
+                    databaseHelper.logoutUser(Dashboard.this);
+                    Intent intent = new Intent(Dashboard.this, MainActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
                     finish();
                     break;
                 default:
