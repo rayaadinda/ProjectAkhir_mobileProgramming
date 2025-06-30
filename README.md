@@ -2,9 +2,9 @@
 
 Aplikasi Android untuk mengelola inventaris peralatan outdoor dengan fitur seperti manajemen produk, integrasi sensor, peta, dan pengenalan suara.
 
-## Tangkapan Layar
+## Screenshoot
 
-*[Tangkapan layar akan ditambahkan]*
+<img src="https://github.com/user-attachments/assets/04f1e4bd-9c2c-413c-bcf1-c4f8f9d6b09a" width="300" alt="Screenshot Dashboard">
 
 ## Fitur
 
@@ -29,7 +29,7 @@ Aplikasi Android untuk mengelola inventaris peralatan outdoor dengan fitur seper
 1. Buka terminal/command prompt
 2. Clone repository:
    ```bash
-   git clone https://github.com/yourusername/outdoor-gear-store.git
+   git clone https://github.com/rayaadinda/ProjectAkhir_mobileProgramming.git
    ```
 3. Buka Android Studio
 4. Pilih "Open an Existing Project"
